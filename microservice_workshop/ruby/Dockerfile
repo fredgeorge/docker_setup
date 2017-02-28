@@ -5,4 +5,7 @@
 FROM fredgeorge/ruby_w_runit
 MAINTAINER Fred George "fredgeorge@acm.org"
 
+RUN gem install json
+RUN gem install pry
+RUN gem install pry-nav
 RUN gem install bunny

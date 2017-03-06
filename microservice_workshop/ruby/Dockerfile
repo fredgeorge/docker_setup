@@ -4,7 +4,7 @@
 # Build image with:
 #    docker build --tag="fredgeorge/microservice_ruby:latest" .
 # Create container for Windows 10 with:
-#    docker run --name='workshop_ruby' -it -v c:/Users/dev/src/microservice_workshop/ruby:/workshop -w /workshop fredgeorge/microservice_ruby:latest bash
+#    docker run --name='workshop_ruby' -it -v c:/Users/dev/src/microservice_workshop/ruby_v2:/workshop -w /workshop fredgeorge/microservice_ruby:latest bash
 
 FROM fredgeorge/ruby_w_runit
 MAINTAINER Fred George "fredgeorge@acm.org"

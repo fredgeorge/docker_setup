@@ -4,7 +4,7 @@
 # Build image with:
 #    docker build --tag="fredgeorge/microservice_ruby:latest" .
 # Create container for Windows 10 with:
-#    docker run --name='rapids_rivers_gem' -it -v c:/Users/dev/src/ruby/microservices-rapids_rivers:/microservices-rapids_rivers -w /microservices-rapids_rivers fredgeorge/microservice_ruby:latest bash
+#    docker run --name='rapids_rivers_gem' -it -v c:/Users/dev/src/ruby/rapids_rivers:/rapids_rivers -w /rapids_rivers fredgeorge/microservice_ruby:latest bash
 
 FROM fredgeorge/ruby_w_runit
 MAINTAINER Fred George "fredgeorge@acm.org"

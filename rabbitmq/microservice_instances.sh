@@ -20,13 +20,14 @@ docker run -d -e RABBITMQ_NODENAME=microservice_rabbitmq -p 15685:15672 -p 5685:
 #   For each host port (regular and admin):
 #     Name: RabbitMQ xx <admin>
 #     Protocol: TCP
-#     Hsot IP: <blank>
-#     Hsot Port: 56xx or 156xx
+#     Host IP: <blank>
+#     Host Port: 56xx or 156xx
 #     Guest IP: <blank>
 #     Guest Port: 56xx or 156xx
 
 # If using Windows 10 Docker, you will need to open up the host ports 156xx and 56xx
-#     You can manually permit a program to access the internet by opening a firewall port. You will need to know what port it uses and the protocol to make this work.
+#     You can manually permit a program to access the internet by opening a firewall 
+#     port. You will need to know what port it uses and the protocol to make this work.
 #         1.	Navigate to Control Panel, System and Security and Windows Firewall.
 #         2.	Select Advanced settings and highlight Inbound Rules in the left pane.
 #         3.	Right click Inbound Rules and select New Rule.

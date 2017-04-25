@@ -14,3 +14,5 @@ RUN gem install pry
 RUN gem install pry-nav
 RUN gem install pry-doc
 RUN gem install bunny
+
+ENV RABBITMQ_IP=192.168.1.249 RABBITMQ_PORT=5672

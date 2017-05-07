@@ -2,8 +2,8 @@
 
 # Dockerfile to build a Ruby runtime for unit testing
 #   docker build --tag="fredgeorge/ruby_w_runit:latest" .
-#   docker tag fredgeorge/ruby_w_runit:latest fredgeorge/ruby_w_runit:v0.5
-# Pushed as fredgeorge/ruby_w_runit:v0.5 and :latest on 6 Feb 2017
+#   docker tag fredgeorge/ruby_w_runit:latest fredgeorge/ruby_w_runit:v0.7
+# Pushed as fredgeorge/ruby_w_runit:v0.7 and :latest on 7 May 2017
 # Create bash container for Windows 10:
 #    docker create --name="ruby_boot_camp" -it -v c:/Users/dev/src/ruby/oo_boot_camp_2017-05-08_ruby:/oo_boot_camp -w /oo_boot_camp fredgeorge/ruby_w_runit:latest
 #

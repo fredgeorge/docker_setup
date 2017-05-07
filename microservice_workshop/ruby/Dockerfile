@@ -3,14 +3,13 @@
 # Dockerfile to build a Ruby runtime for Rental Car Offers microservices
 # Build image with:
 #    docker build --tag="fredgeorge/microservice_ruby:latest" .
+#    docker tag fredgeorge/microservice_ruby:latest fredgeorge/microservice_ruby:v0.1
 # Create container for Windows 10 with:
 #    docker run --name='workshop_ruby' -it -v c:/Users/dev/src/microservice_workshop/ruby_v2:/workshop -w /workshop fredgeorge/microservice_ruby:latest bash
 
 FROM fredgeorge/ruby_w_runit
 MAINTAINER Fred George "fredgeorge@acm.org"
 
-RUN gem install json
-RUN gem install pry
-RUN gem install pry-nav
-RUN gem install pry-doc
 RUN gem install bunny
+
+CMD ["bash"]

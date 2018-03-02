@@ -3,13 +3,23 @@
 # In this alternative strategy, one Ruby instance can run multiple services.
 # First, start a Ruby instance with the Monitor running:
 
-# Monitor: Docker run command (for Mac):
-docker run --name='workshop_ruby' -it -v /Users/dev/src/microservice_workshop/ruby:/workshop -w /workshop/rental_offer fredgeorge/microservice_ruby:latest ruby rental_offer_monitor.rb 10.13.154.34 5672
-# Monitor: Docker run command (for Windows 10):
-# docker run --name='workshop_ruby' -it -v c:/Users/dev/src/microservice_workshop/ruby:/workshop -w /workshop/rental_offer fredgeorge/microservice_ruby:latest ruby rental_offer_monitor.rb 10.13.154.34 5672
+# Initial setup of container: Docker run command (for Windows 10):
+docker run --name='workshop_ruby' -it -v c:/Users/dev/src/microservice_workshop/ruby_v2:/ruby_v2 -w /ruby_v2/lib/rental_offer fredgeorge/microservice_ruby:latest bash
+# Then make sure the gems are available from the resulting command line:
+cd ../..
+bundle install
+cd lib/rental_offer
+ruby monitor_all.rb 192.168.254.120 5685
 
-# Then in another cmd/power_shell windoe, start up Need
-docker exec -it workshop_ruby ruby rental_offer_need.rb 10.13.154.34 5672
+# Subsequent use of container, including starting the monitor:
+docker start workshop_ruby
+docker exec -it workshop_ruby ruby monitor_all.rb 192.168.254.120:5685
+
+# Monitor: Docker run command (for Windows 10):
+docker run --name='workshop_ruby' -it -v c:/Users/dev/src/microservice_workshop/ruby_v2:/ruby_v2 -w /ruby_v2/lib/rental_offer fredgeorge/microservice_ruby:latest ruby monitor_all.rb 192.168.254.120 5685
+
+# Then in another cmd/power_shell window, start up Need
+docker exec -it workshop_ruby ruby rental_need.rb 192.168.254.120 5685
 
 # Stopping the Monitor will stop both services, and exit the container
 

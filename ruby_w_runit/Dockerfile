@@ -14,7 +14,7 @@
 # After the first time, get the Ruby Runit running with:
 #   docker start -i 2u_grades
 
-FROM ruby:2.4.1
+FROM ruby:2.5.0
 MAINTAINER Fred George "fredgeorge@acm.org"
 
 RUN apt-get update -y && apt-get install -y curl nano

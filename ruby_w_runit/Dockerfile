@@ -20,7 +20,7 @@ MAINTAINER Fred George "fredgeorge@acm.org"
 RUN apt-get update -y && apt-get install -y curl nano
 RUN gem install json
 RUN gem install pry
-RUN gem install pry-nav
+RUN gem install pry-byebug
 RUN gem install pry-doc
 
 CMD ["bash"]

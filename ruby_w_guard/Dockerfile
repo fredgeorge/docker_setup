@@ -2,7 +2,7 @@
 
 # Dockerfile to build a Ruby runtime for unit testing
 #   docker build --tag="fredgeorge/ruby_w_guard:latest" .
-#   docker tag fredgeorge/ruby_w_guard:latest fredgeorge/ruby_w_guard:1.3.0
+#   docker tag fredgeorge/ruby_w_guard:latest fredgeorge/ruby_w_guard:2.5.1
 
 # Start container with Guard running automatically:
 #   docker start -i container_name
@@ -21,4 +21,4 @@ MAINTAINER Fred George "fredgeorge@acm.org"
 RUN gem install guard
 RUN gem install guard-minitest
 
-CMD ["guard", "-p"]
+CMD ["guard", "--force-polling"]

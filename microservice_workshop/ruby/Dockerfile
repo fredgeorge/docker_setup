@@ -12,6 +12,7 @@ MAINTAINER Fred George "fredgeorge@acm.org"
 
 RUN gem install bunny
 
+# Override the following on "docker run" with -e RABBITMQ_IP=nnn.nnn.nnn.nnn -e RABBITMQ_PORT=mmmm
 ENV RABBITMQ_IP=192.168.254.120 RABBITMQ_PORT=5672
 
 CMD ["bash"]
